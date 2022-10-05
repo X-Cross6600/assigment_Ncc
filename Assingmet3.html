@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ramdom number</h1>
+    <label>Choose number of ramdom number that you want</label>
+    <input type="text" name="" id="num"  value="1">
+    <input type="button" value="Get Number" onclick="mainprogram()"><br><br>
+    <h3>Your ramdom numbers are:</h3>
+    <h4 id="ans"></h4>
+    
+    
+
+    <script>
+        function mainprogram(){
+        let inputObj=document.querySelector('input[type="text"]')
+        let wantNum=inputObj.value;
+        
+        
+        let result="";
+        for(let i=0;i<wantNum;i++){
+            function randomIntFromInterval(min, max) { // min and max included 
+                return Math.floor(Math.random() * (max - min + 1) + min)
+            }
+            
+            const rndInt = randomIntFromInterval(1, 100)
+            result += rndInt.toString()+"@@       ";       
+
+        }
+        document.getElementById("ans").innerHTML=result;
+        
+        }
+    </script>
+
+</body>
+</html>
